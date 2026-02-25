@@ -104,14 +104,14 @@ namespace Tobasa.Models.Mjkn
         
         public string Keluhan { get; set; } // khusus FKTP
 
-        // Tambahan untuk FKTRL
+        // Tambahan untuk FKRTL
         public string NomorReferensi { get; set; } // Nomor Rujukan dari FKTP   
         public int    JenisKunjungan { get; set; } //  Jenis kunjungan: 1=FKTP, 2=INTERNAL, 3=KONTROL, 4=ANTAR RS
     }
 
-    public class ResultAmbilAntrianFKTRL
+    public class ResultAmbilAntrianFKRTL
     {
-        public ResultAmbilAntrianFKTRL()
+        public ResultAmbilAntrianFKRTL()
         {
             RegistrationToken = "";
             IssuedAt          = "";
@@ -122,7 +122,7 @@ namespace Tobasa.Models.Mjkn
             AntrianSummary    = null;
             StatusAntri       = 0;
         }
-        public ResultAmbilAntrianFKTRL(string message)
+        public ResultAmbilAntrianFKRTL(string message)
         {
             RegistrationToken = "";
             IssuedAt          = "";

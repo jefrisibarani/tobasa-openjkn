@@ -103,7 +103,7 @@ namespace Tobasa.Models.Mjkn
         public string NamaPoliJKN { get; set; }
         public string Keluhan { get; set; }
 
-        // Tambahan untuk FKTRL
+        // Tambahan untuk FKRTL
         public string NomorReferensi { get; set; }  // Nomor Rujukan dari FKTP   
         public int    JenisKunjungan { get; set; }  //  Jenis kunjungan: 1=FKTP, 2=INTERNAL, 3=KONTROL, 4=ANTAR RS
     }

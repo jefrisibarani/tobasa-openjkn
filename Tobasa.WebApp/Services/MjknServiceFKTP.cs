@@ -842,7 +842,7 @@ namespace Tobasa.Services
                                                x.JadwalId        == jadwalID
                                             && x.NomorRekamMedis == request.NomorRekamMedis
                                             && x.InsuranceId     == request.JenisPasien
-                                            //&& x.NomorRujukan  == request.NomorRujukan // only for FKTRL
+                                            //&& x.NomorRujukan  == request.NomorRujukan // only for FKRTL
                                             && x.StatusAntri     >= StatusAntri.BOOKED );
                         }
                         else
@@ -1056,7 +1056,7 @@ namespace Tobasa.Services
                         .Where(x => x.JadwalId == jadwalID && x.TokenAntrian == newAntrian.TokenAntrian)
                         .SingleAsync();
                     
-                    // Note_JEFRI: untuk FKTRL tidak ada keluhan, hanya untuk FKTP
+                    // Note_JEFRI: untuk FKRTL tidak ada keluhan, hanya untuk FKTP
                     await UpdateAntrianStatusHistory(newAntrianUpdated, request.Keluhan);
 
                     // Save transaction history

@@ -72,12 +72,12 @@ namespace Tobasa.Services
         Task<CekSlotResult> CekSlotReservasi(long kodeJadwal, string appSource);
         Task<AntrianSummary> GetAntrianSummary(long jadwalId);
         Task<bool> CheckKodeBooking(string kodeBooking);
-        Task<bool> SaveAmbilAntrian(RequestAmbilAntrianFKRTL request, ResultAmbilAntrianFKTRL result);
+        Task<bool> SaveAmbilAntrian(RequestAmbilAntrianFKRTL request, ResultAmbilAntrianFKRTL result);
 
         // --------------------------------------------------------------------
         // Services terkait untuk diakses BPJS
         // --------------------------------------------------------------------
-        Task<ResultAmbilAntrianFKTRL> GetAppointment(DataAmbilAntrianFKRTL request, long jadwalId);
+        Task<ResultAmbilAntrianFKRTL> GetAppointment(DataAmbilAntrianFKRTL request, long jadwalId);
         Task<ResponseSisaAntrianFKRTL> GetSisaAntrian(RequestSisaAntrianFKRTL request);
         Task<ResponseStatusAntrianFKRTL> GetStatusAntrian(RequestStatusAntrianFKRTL request);
         Task<ResponseStatusAntrianFKRTL> GetStatusAntrianSimrs(string kodepoliRs, string kodedokterRs, string tanggalperiksa, string jampraktek);
@@ -917,7 +917,7 @@ namespace Tobasa.Services
             return found;
         }
 
-        public async Task<bool> SaveAmbilAntrian(RequestAmbilAntrianFKRTL request, ResultAmbilAntrianFKTRL result)
+        public async Task<bool> SaveAmbilAntrian(RequestAmbilAntrianFKRTL request, ResultAmbilAntrianFKRTL result)
         {
             try
             {
@@ -2346,7 +2346,7 @@ namespace Tobasa.Services
             }
         }
 
-        public async Task<ResultAmbilAntrianFKTRL> GetAppointment( DataAmbilAntrianFKRTL request, long jadwalID)
+        public async Task<ResultAmbilAntrianFKRTL> GetAppointment( DataAmbilAntrianFKRTL request, long jadwalID)
         {
             if ( request.JenisPasien == Insurance.BPJS)
                 _logger.LogDebug("  MjknService: GetAppointment Ambil antrian baru untuk peserta No.BPJS: " + request.NomorKartu);
@@ -2429,7 +2429,7 @@ namespace Tobasa.Services
                     }
 
                     var antrianSummary = await GetAntrianSummary(jadwalID);
-                    var result = new ResultAmbilAntrianFKTRL
+                    var result = new ResultAmbilAntrianFKRTL
                     {
                         Message           = "SUCCESS_EXISTS",
                         RegistrationToken = reservasi.TokenAntrian,
@@ -2587,7 +2587,7 @@ namespace Tobasa.Services
                         .Where(x => x.JadwalId == jadwalID && x.TokenAntrian == newAntrian.TokenAntrian)
                         .SingleAsync();
                     
-                    // Note_JEFRI: untuk FKTRL tidak ada keluhan, hanya untuk FKTP
+                    // Note_JEFRI: untuk FKRTL tidak ada keluhan, hanya untuk FKTP
                     await UpdateAntrianStatusHistory(newAntrianUpdated, "");
 
                     // Save transaction history
@@ -2599,7 +2599,7 @@ namespace Tobasa.Services
                     // get updated antrian summary so we can get latest stats of jadwal
                     antrianSummary = await GetAntrianSummary(jadwalID);
                     // return the result
-                    var result = new ResultAmbilAntrianFKTRL
+                    var result = new ResultAmbilAntrianFKRTL
                     {
                         Message           = "SUCCESS",
                         RegistrationToken = newAntrian.TokenAntrian,

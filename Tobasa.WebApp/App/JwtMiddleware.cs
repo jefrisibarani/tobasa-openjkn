@@ -177,7 +177,7 @@ namespace Tobasa.App
                 if (errorMEssage == "TokenAntrian tidak ada pada header")
                 {
                     if ( routePath.ToString().StartsWith("/api/fktp/token") ||
-                         routePath.ToString().StartsWith("/api/fktrl/token") ||
+                         routePath.ToString().StartsWith("/api/fkrtl/token") ||
                          routePath.ToString().StartsWith("/api/users/authenticate") )
                     {
                         _logger.LogTrace($"JwtMiddleware, {errorMEssage}");

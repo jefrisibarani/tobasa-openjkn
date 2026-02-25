@@ -144,7 +144,7 @@ namespace Tobasa.Controllers
                 var kodePoliBPJS   = await _jknService.GetKodePoliJKN(kodeSubPoliBPJS);
                 var listJadwalHfis = await _jknService.GetJadwalDokterHFIS(kodePoliBPJS, request.TanggalPeriksa);
 
-                // Create jadwal praktek HMS dari data HFIS (menggunakan kode sub spesialis) - kodeSubPoliBPJS adalah kode sub spesialis BPJS
+                // Create jadwal praktek SIMRS dari data HFIS (menggunakan kode sub spesialis) - kodeSubPoliBPJS adalah kode sub spesialis BPJS
                 await _jknService.CreateJadwalPraktekDariHFIS(request.TanggalPeriksa, kodeSubPoliBPJS, request.KodeDokter, jamMulai, jamSelesai);
             }
 
