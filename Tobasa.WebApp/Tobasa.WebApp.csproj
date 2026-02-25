@@ -7,6 +7,8 @@
     <ApplicationIcon>wsopenjkn.ico</ApplicationIcon>
     <Copyright>2026 Jefri Sibarani - Mangapul</Copyright>
     <Description>Tobasa OpenJKN Bridge</Description>
+    <PackageProjectUrl>https://github.com/jefrisibarani/tobasa-openjkn</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;ENABLE_MYSQL_SUPPORT</DefineConstants>
@@ -36,6 +38,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="wsopenjkn.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
