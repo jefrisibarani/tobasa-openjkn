@@ -1,0 +1,1 @@
+Only use EF models generated/scaffolded from MSSQL

@@ -1,0 +1,48 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime files
+pids/
+*.pid
+*.seed
+
+# Coverage
+coverage/
+lib-cov/
+.nyc_output/
+
+# Node
+node_modules/
+jspm_packages/
+typings/
+.npm
+.node_repl_history
+build/Release/
+
+# .NET
+bin/
+obj/
+.vs/
+*.csproj.user
+*.user
+*.suo
+
+# Publish output
+_publish/
+
+# IDE
+.idea/
+.vscode/
+
+# Local databases
+LocalDatabase.db
+tobasa_openjkn.db3
+
+# App secrets
+appsettings.Development.json
+appsettings.*.local.json
+secrets.json
+
+*.pubxml.user
