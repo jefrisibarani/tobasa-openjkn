@@ -158,7 +158,7 @@ namespace Tobasa.Services.Vclaim
                         ""hari"": 1,
                         ""kapasitaspasien"": 5,
                         ""libur"": 0,
-                        ""namahari"": ""KAMIS"",
+                        ""namahari"": ""JUMAT"",
                         ""jadwal"": ""14:00-16:00"",
                         ""namasubspesialis"": ""NEUROTOLOGI"",
                         ""namadokter"": ""dr. Clark Blue"",
